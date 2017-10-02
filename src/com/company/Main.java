@@ -18,11 +18,11 @@ public class Main {
 
         for (count=0; count <= length; count++) {
             if (place == 0) {
-                finalString[loc] = Integer.toHexString(finalString[loc]); //Trying to find this method for string/char instead of Integer
+                finalString[loc] = Integer.toHexString(finalString[loc]); //Not working | Trying to find this method for string/char instead of Integer
                 count++;
                 place = 1;
             } else if (place == 1) {
-                finalString[loc] = Integer.toBinaryString(); //Trying to find this method for string/char instead of Integer
+                finalString[loc] = Integer.toBinaryString(); //Not working | Trying to find this method for string/char instead of Integer
                 count++;
                 place = 2;
             } else if (place == 2) {
