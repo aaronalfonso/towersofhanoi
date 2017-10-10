@@ -1,44 +1,33 @@
 package com.company;
+
 import java.util.*;
+import java.lang.*;
 
 public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        Scanner userInput = new Scanner(System.in);
-        String input = userInput.nextLine();
-        int length = input.length();
-        double randomPlace = Math.random() * 5;
-        double randomLoca = Math.random() * length;
-        int place = (int)randomPlace;
-        int count = 0;
-        int randomLoc = (int)randomLoca;
-        int loc = randomLoc;
-        char[] finalString = input.toCharArray();
-
-        for (count=0; count <= length; count++) {
-            if (place == 0) {
-                finalString[loc] = Integer.toHexString(finalString[loc]); //Not working | Trying to find this method for string/char instead of Integer
-                count++;
-                place = 1;
-            } else if (place == 1) {
-                finalString[loc] = Integer.toBinaryString(); //Not working | Trying to find this method for string/char instead of Integer
-                count++;
-                place = 2;
-            } else if (place == 2) {
-                count++;
-                place = 3;
-            } else if (place == 3) {
-                count++;
-                place = 4;
-            } else if (place == 4) {
-                count++;
-                place = 0;
+        int exit = 2;
+        while (exit == 2){
+            Scanner userInput = new Scanner(System.in);
+            System.out.println("Hi, what's your name?");
+            String name = userInput.nextLine();
+            exit = 1;
+            while (exit == 1){
+                perfectRandom randomNum = new perfectRandom();
+                int randomNumber = randomNum.perfectRandom();
+                System.out.println("Hi " + name + ". Your lucky number for today is " + randomNumber);
+                System.out.println("If you would like to exit, enter 0. To get another lucky number, enter 1. To change your name, enter 2.");
+                exit = userInput.nextInt();
             }
-            if (randomLoc > length) {
+            if (exit == 0) {
+                System.out.println("Exiting program...");
 
+            }
+            if (exit != 0 && exit != 1 && exit != 2) {
+                System.out.println("Incorrect integer entered, exiting program...");
             }
         }
-        System.out.println(finalString[0]);
+
     }
 }
