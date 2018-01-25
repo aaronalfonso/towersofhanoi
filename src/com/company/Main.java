@@ -11,5 +11,6 @@ public class Main {
 	    System.out.println("Enter the amount of disks in the game");
 	    int num = userInput.nextInt();
 	    
+	    solution.getAns(num, 1, 3, 2);
     }
 }
